@@ -24,7 +24,6 @@ def get_digest(message):
     h3 = 0x10325476
     h4 = 0xC3D2E1F0
     padded_message = padding(message)
-    # print(padded_message)
     chunk_512 = split_into_chunks(padded_message, 64)
     for chunk in chunk_512:
         words = list(struct.unpack(">16I", chunk)) + [0] * 64
